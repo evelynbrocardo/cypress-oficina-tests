@@ -1,25 +1,38 @@
-describe('Login Oficina Integrada', () => {
+/*describe('Login Oficina Integrada', () => {
   it('Deve acessar a página de login e verificar título', () => {
     cy.visit('https://sistema.oficinaintegrada.com.br/default.asp')
     cy.title().should('include', 'Oficina Integrada')
   })
-})
+})*/
 
-describe('Testes de Login', () => {
-  it('deve fazer login com credenciais válidas e redirecionar', () => {
-    // 1. Visitar a página de login
-    cy.visit('https://sistema.oficinaintegrada.com.br/default.asp'); // Substitua '/login' pela URL da sua página de login
 
-    // 2. Preencher os campos de email e senha
-    cy.get('input[name="Chave"]').type('28039037136'); // Substitua o seletor e o email
-    cy.get('input[name="Usuário"]').type('evelyn'); // Substitua o seletor e o email
-    cy.get('input[name="Senha"]').type('841884'); // Substitua o seletor e a senha
+describe('Login Oficina Integrada', () => {
+  it('Deve acessar a página de login, fechar tutorial se existir e fazer login', () => {
+    // 1. Visita a página de login
+    cy.visit('https://sistema.oficinaintegrada.com.br/login.asp');
 
-    // 3. Clicar no botão de login
-    cy.get('button[type="login"]').click(); // Substitua o seletor
+    // 2. Preenche os campos de login
+    cy.get('#chave').type('28039037136'); 
+    cy.get('#usuario').type('evelyn'); 
+    cy.get('#senha').type('841884'); 
 
-    // 4. Verificar se o usuário é redirecionado para o dashboard
-    cy.url().should('include', '/dashboard'); // Verifique se a URL contém o caminho esperado
-    cy.get('h1').should('contain', 'Bem-vindo'); // Verifique um elemento na página do dashboard
+    // 4. Clica no botão de login
+    cy.get('#btnLogar').click();
+
+    // 5. Verifica se redirecionou corretamente
+    cy.url().should('include', '/default.asp');
+
+    // 6. Valida o título da página
+    cy.title().should('include', 'Oficina Integrada');
+
+    // 8. Fecha o tutorial se o botão "Finalizar" existir
+    cy.get('body').then(($body) => {
+      if ($body.find('button:contains("Finalizar")').length > 0) {
+        cy.contains('Finalizar').click({ force: true });
+      }
+    });
+    // 7. Verifica se a página carregou algo esperado no dashboard
+    cy.contains('Configurações').click({ force: true });
   });
 });
+
