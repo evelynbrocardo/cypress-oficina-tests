@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-30T11:20:10.901Z",
+    "end": "2025-09-30T11:20:34.969Z",
+    "duration": 24068,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "10468777-27ce-452a-afc1-1d5fceb86a84",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro _usuario.cy.js",
+      "file": "cypress\\e2e\\cadastro _usuario.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a01b60a1-2901-4b00-9243-3a8e59c9317f",
+          "title": "Cadastro de cliente - preenchendo apenas o campo Nome",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve cadastrar cliente preenchendo apenas o Nome",
+              "fullTitle": "Cadastro de cliente - preenchendo apenas o campo Nome Deve cadastrar cliente preenchendo apenas o Nome",
+              "timedOut": null,
+              "duration": 21953,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Vai para tela de cadastro\ncy.visit('https://sistema.oficinaintegrada.com.br/P_CADASTRA_CLIENTES.ASP');\ncy.get('#NOME').type('EVELYN CRISTINA BROCARDO').pause();\ncy.contains('Salvar').click().pause();\ncy.contains('Seu cliente foi cadastrado. Agora escolha o que fazer.').should('be.visible');\ncy.contains('Concluir').click();",
+              "err": {},
+              "uuid": "30dd2577-7b3b-4498-9795-86ed438b3baf",
+              "parentUUID": "a01b60a1-2901-4b00-9243-3a8e59c9317f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "30dd2577-7b3b-4498-9795-86ed438b3baf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21953,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}

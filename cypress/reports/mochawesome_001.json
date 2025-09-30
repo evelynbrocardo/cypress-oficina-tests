@@ -1,0 +1,222 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-30T11:20:36.681Z",
+    "end": "2025-09-30T11:20:53.741Z",
+    "duration": 17060,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "df89d1f3-43df-49df-86f2-5e82891c1dcb",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5dc43e74-e613-4539-b049-9d13f918ac45",
+          "title": "Cenário 1: Abertura do site Oficina Integrada",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve acessar a página de login e verificar título",
+              "fullTitle": "Cenário 1: Abertura do site Oficina Integrada Deve acessar a página de login e verificar título",
+              "timedOut": null,
+              "duration": 1946,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://sistema.oficinaintegrada.com.br/default.asp');\ncy.title().should('include', 'Oficina Integrada');",
+              "err": {},
+              "uuid": "8d1ff534-9cd0-40ed-a73f-8adc32a401e8",
+              "parentUUID": "5dc43e74-e613-4539-b049-9d13f918ac45",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8d1ff534-9cd0-40ed-a73f-8adc32a401e8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1946,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "eab39350-23ee-4f61-96f8-7d6776e553df",
+          "title": "Cenário 2:Fazer login no site Oficina Integrada",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve acessar a página de login",
+              "fullTitle": "Cenário 2:Fazer login no site Oficina Integrada Deve acessar a página de login",
+              "timedOut": null,
+              "duration": 7518,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Visita a página de login\ncy.visit('https://sistema.oficinaintegrada.com.br/login.asp');\n// 2. Preenche os campos de login\ncy.get('#chave').type('28039037136');\ncy.get('#usuario').type('evelyn');\ncy.get('#senha').type('841884');\n// 4. Clica no botão de login\ncy.get('#btnLogar').click();\n// 5. Verifica se redirecionou corretamente\ncy.url().should('include', '/default.asp');\n// 6. Valida o título da página\ncy.title().should('include', 'Oficina Integrada');\n// 8. Fecha o tutorial se o botão \"Finalizar\" existir\ncy.get('body').then($body => {\n  if ($body.find('button:contains(\"Finalizar\")').length > 0) {\n    cy.contains('Finalizar').click({\n      force: true\n    });\n  }\n});",
+              "err": {},
+              "uuid": "42a3c79d-3f00-4c8c-a6d3-0bf4692057ce",
+              "parentUUID": "eab39350-23ee-4f61-96f8-7d6776e553df",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "42a3c79d-3f00-4c8c-a6d3-0bf4692057ce"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7518,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "2858191c-1ea8-4c66-bfae-3c67ac83a51b",
+          "title": "Cenário 3: Fazer login no site Oficina Integrada",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve acessar a página de login",
+              "fullTitle": "Cenário 3: Fazer login no site Oficina Integrada Deve acessar a página de login",
+              "timedOut": null,
+              "duration": 3566,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Visita a página de login\ncy.visit('https://sistema.oficinaintegrada.com.br/login.asp');\n// 2. Preenche os campos de login\ncy.get('#chave').type('28039037137');\ncy.get('#usuario').type('evelyn');\ncy.get('#senha').type('841884');\n// 4. Clica no botão de login\ncy.get('#btnLogar').click();",
+              "err": {},
+              "uuid": "96611a3f-45c6-483c-99a5-241a3c479a7f",
+              "parentUUID": "2858191c-1ea8-4c66-bfae-3c67ac83a51b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "96611a3f-45c6-483c-99a5-241a3c479a7f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3566,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "929ad961-59b4-4a8f-91e6-3ad5c5b9b403",
+          "title": "Cenário 4: Fazer login no site Oficina Integrada",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve acessar a página de login, fechar tutorial se existir e fazer login",
+              "fullTitle": "Cenário 4: Fazer login no site Oficina Integrada Deve acessar a página de login, fechar tutorial se existir e fazer login",
+              "timedOut": null,
+              "duration": 1816,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1. Visita a página de login\ncy.visit('https://sistema.oficinaintegrada.com.br/login.asp');\n// 2. Preenche os campos de login\ncy.get('#usuario').type('evelyn');\ncy.get('#senha').type('841884');\n// 4. Clica no botão de login\ncy.get('#btnLogar').click();",
+              "err": {},
+              "uuid": "f9b61ecf-fde5-4b88-9171-52ca291689a0",
+              "parentUUID": "929ad961-59b4-4a8f-91e6-3ad5c5b9b403",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f9b61ecf-fde5-4b88-9171-52ca291689a0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1816,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}
